@@ -42,6 +42,7 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
+       
       </div>
     </div>
     <script>
@@ -73,12 +74,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/e9f17ed2d61b005cd2adac8329fe5bd2.loader.js";
+      var loaderUrl = buildUrl + "/bf1968fe2ca6da797e383f4e005723b9.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/b20d9df4b2716559280778da04c8f3db.data.unityweb",
-        frameworkUrl: buildUrl + "/ebc21e1f90199778afd803623cec4e04.framework.js.unityweb",
-        codeUrl: buildUrl + "/d85b37472835029c43903aee06cc39a6.wasm.unityweb",
+        dataUrl: buildUrl + "/3cd6f1b0da2f66ae2e3a6394cc601fc9.data.unityweb",
+        frameworkUrl: buildUrl + "/1e692fc76534d258371421ff1edf1ddb.framework.js.unityweb",
+        codeUrl: buildUrl + "/83c1f2715ea3079886b023fe852a52e2.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Skybull",
         productName: "Eternal Kings",
@@ -132,6 +133,7 @@
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 document.querySelector("#unity-loading-bar").style.display = "none";
+          
 
               }).catch((message) => {
                 alert(message);

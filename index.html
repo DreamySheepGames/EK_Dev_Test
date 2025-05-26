@@ -42,6 +42,7 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
+       
       </div>
     </div>
     <script>
@@ -76,7 +77,7 @@
       var loaderUrl = buildUrl + "/7e336daf75736339babea11bf57f8218.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/108ce01e05cee5c868f25b664b5acc08.data.unityweb",
+        dataUrl: buildUrl + "/b716b1346e595217b8be783801fb348e.data.unityweb",
         frameworkUrl: buildUrl + "/fdebae9ca70b54f8fc48b6923141c69a.framework.js.unityweb",
         codeUrl: buildUrl + "/1d107cc8bd32c442bbb72d851e88a937.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
@@ -126,18 +127,18 @@
       document.querySelector("#unity-loading-bar").style.display = "block";
 
       var script = document.createElement("script");
+      var unityInstanceGlobal;
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-          
-
-              }).catch((message) => {
-                alert(message);
-              });
-            };
+        }).then((unityInstance) => {
+          document.querySelector("#unity-loading-bar").style.display = "none";
+          unityInstanceGlobal = unityInstance;
+        }).catch((message) => {
+          alert(message);
+        });
+      };
 
       document.body.appendChild(script);
 
